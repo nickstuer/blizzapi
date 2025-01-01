@@ -1,5 +1,5 @@
-from blizzapi.core.fetch import dynamic, profile, static
 from blizzapi.core.baseClient import BaseClient
+from blizzapi.core.fetch import dynamic, profile, static
 
 
 class ClassicClient(BaseClient):

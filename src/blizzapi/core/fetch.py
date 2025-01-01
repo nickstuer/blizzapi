@@ -1,9 +1,10 @@
 from functools import wraps
-from blizzapi.core.constants import API_BASE_URI, TOKEN_AUTH_URI
-from blizzapi.core.enums import Region, Language
-from blizzapi.core.utils import get_args_from_func, parse_uri, append_param
-from blizzapi.core.oAuth2Client import OAuth2Client
+
 from blizzapi.core.baseClient import BaseClient
+from blizzapi.core.constants import API_BASE_URI, TOKEN_AUTH_URI
+from blizzapi.core.enums import Language, Region
+from blizzapi.core.oAuth2Client import OAuth2Client
+from blizzapi.core.utils import append_param, get_args_from_func, parse_uri
 
 
 class Fetch:

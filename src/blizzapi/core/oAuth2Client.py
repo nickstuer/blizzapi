@@ -1,10 +1,11 @@
+from datetime import datetime, timezone
+from pprint import pprint
+
+import requests
 from oauthlib.oauth2 import BackendApplicationClient
+from requests.adapters import HTTPAdapter, Retry
 from requests.auth import HTTPBasicAuth
 from requests_oauthlib import OAuth2Session
-import requests
-from pprint import pprint
-from datetime import datetime, timezone
-from requests.adapters import HTTPAdapter, Retry
 
 from blizzapi.core.utils import BearerAuth
 
