@@ -1,5 +1,5 @@
-from blizzapi.core.goFetch import dynamic, profile, static
-from blizzapi.clients.wow.baseClient import BaseClient
+from blizzapi.core.fetch import dynamic, profile, static
+from blizzapi.core.baseClient import BaseClient
 
 class RetailClient(BaseClient):
     def __init__(self, *args, **kwargs):
