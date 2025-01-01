@@ -37,3 +37,20 @@ class ClassicClient(BaseClient):
     @profile("/profile/wow/character/{realmSlug}/{characterName}/status")
     def character_profile_status(self, realmSlug: str, characterName: str):
         pass
+
+    ### Guild API ###
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}")
+    def guild(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/activity")
+    def guild_activity(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/achievements")
+    def guild_achievements(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/roster")
+    def guild_roster(self, realmSlug: str, nameSlug: str):
+        pass

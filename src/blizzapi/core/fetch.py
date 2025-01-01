@@ -20,7 +20,9 @@ class Fetch:
                 uri = client.build_uri(
                     command_uri, self.namespace_type, func, args, kwargs
                 )
-                return client.get(uri)
+
+                result = client.get(uri)
+                return result
 
             return wrapped
 
