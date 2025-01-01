@@ -7,8 +7,8 @@ This Python package is a user-friendly interface for the Blizzard API. It simpli
 
 ## Table of Contents
 
-- [Background](#background)
-- [Install](#install)
+- [Features](#📖Features)
+- [Install](#🛠install)
 - [Usage](#usage)
 - [Development](#development)
 - [Contributing](#contributing)
@@ -16,16 +16,42 @@ This Python package is a user-friendly interface for the Blizzard API. It simpli
 
 ## 📖 Features
 
-### 1. Comprehensive API Coverage
+### Comprehensive API Coverage
+Access a wide range of game data, including player profiles, achievements, character information and guild information as documented in the official [Blizzard API Documenation](https://develop.battle.net/documentation).
 
-## 📌 Install
+### Oauth2 Integration
+Authenticate using Blizzard's OAuth2 system to ensure reliable access to private and public data.
+
+### Ease of Use
+With clean and intuitive methods, developers can fetch and manipulate data without diving deep into Blizzard's API documentation.
+
+### Data Format
+Conveniently structured JSON responses make it easy to integrate with applications.
+
+### Rate Limit Awareness
+Coming Soon
+
+### Supported APIs
+| API                                   | Status                              |
+| :----------------------------------:  | :--------------------------------:  |
+| World Of Warcraft (Retail)            | Partial Support                     |
+| World Of Warcraft (Classic)           | Partial Support                     |
+| World of Warcraft (Classic Era)       | Partial Support                     |
+| Hearthstone                           | Unplanned                           |
+| StarCraft 2                           | Unplanned                           |
+| Diablo 3                              | Unplanned                           |
+| Diablo 4                              | Unsupported (No Blizzard API)       |
+| Overwatch 2                           | Unsupported (No Blizzard API)       |
+
+
+## 🛠 Install
 
 ```
 # PyPI
 pip install blizzapi
 ```
 
-## 🛠 Dependencies
+##  📌 Dependencies
 Python 3.10 or greater
 
 ## 🎮 Usage
