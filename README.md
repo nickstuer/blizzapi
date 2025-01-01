@@ -3,20 +3,20 @@
 [![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-Python package to connect to the blizzard API. Currently only supports WoW Classic Era but additional support coming soon.
+This Python package is a user-friendly interface for the Blizzard API. It simplifies the process of retrieving data from Blizzard's API, allowing developers and enthusiasts to seamlessly access and interact with game-related information.
 
 ## Table of Contents
 
-- [Background](##background)
-- [Install](##install)
-- [Usage](##usage)
-- [Development](##development)
-- [Contributing](##contributing)
-- [License](##license)
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-## 📖 Background
+## 📖 Features
 
-### Any optional sections
+### 1. Comprehensive API Coverage
 
 ## 📌 Install
 
@@ -25,10 +25,10 @@ Python package to connect to the blizzard API. Currently only supports WoW Class
 pip install blizzapi
 ```
 
-## Dependencies
+## 🛠 Dependencies
 Python 3.10 or greater
 
-## Usage
+## 🎮 Usage
 
 ### WoW Classic Era
 ```python
