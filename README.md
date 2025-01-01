@@ -66,8 +66,11 @@ Helpful notes on how to set up a virtual enviroment for developing python applic
     2. Choose 'Command Prompt'
 
 4. Test the Virtual Environment
-     1. Press CTRL + SHIFT + ~ to open a terminal.
-     2. Ensure the prompt begins with '(.venv)'
+    1. Press CTRL + SHIFT + ~ to open a terminal.
+    2. Ensure the prompt begins with '(.venv)'
+
+5. Install the pip dependenies
+    1. Type: pip install -r requirements.txt
         
 </details>
 
