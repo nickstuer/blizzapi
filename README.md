@@ -1,9 +1,5 @@
 # Python BlizzAPI
 
-![banner]()
-
-![badge]()
-![badge]()
 [![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
@@ -11,12 +7,12 @@ Python package to connect to the blizzard API. Currently only supports WoW Class
 
 ## Table of Contents
 
-- [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
+- [Background](##background)
+- [Install](##install)
+- [Usage](##usage)
+- [Development](##development)
+- [Contributing](##contributing)
+- [License](##license)
 
 ## 📖 Background
 
@@ -29,23 +25,28 @@ Python package to connect to the blizzard API. Currently only supports WoW Class
 pip install blizzapi
 ```
 
-### Any optional sections
-
 ## Dependencies
 Python 3.10 or greater
 
 ## Usage
 
+### WoW Classic Era
 ```python
-import blizzapi
-client = blizzapi.ClassicEraClient(client_id=XXX, client_secret=YYY)
+from blizzapi import ClassicEraClient
+client = ClassicEraClient(client_id=XXX, client_secret=YYY)
 
 result = client.connected_realm_search(fields={"status.type": "UP"})
 result = client.wow_token_index()
-result client.character_profile('doomhowl', 'thetusk')
+result = client.character_profile('doomhowl', 'thetusk')
 ```
 
-### Any optional sections
+### WoW Retail
+```python
+from blizzapi import RetailClient
+client = RetailClient(client_id=XXX, client_secret=YYY)
+
+result = client.wow_token_index()
+```
 
 ## 💻 Development
 
