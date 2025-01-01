@@ -5,7 +5,8 @@ from blizzapi.core.utils import get_args_from_func, parse_uri, append_param
 from blizzapi.core.oAuth2Client import OAuth2Client
 from blizzapi.core.baseClient import BaseClient
 
-class Fetch():
+
+class Fetch:
     def __init__(self, namespace_type):
         self.namespace_type = namespace_type
 
@@ -13,13 +14,18 @@ class Fetch():
         def wrapped(func):
             @wraps(func)
             def wrapped(*args, **kwargs):
-                assert(isinstance(args[0], OAuth2Client))
-                client:BaseClient = args[0]
-                uri = client.build_uri(command_uri, self.namespace_type, func, args, kwargs)
+                assert isinstance(args[0], OAuth2Client)
+                client: BaseClient = args[0]
+                uri = client.build_uri(
+                    command_uri, self.namespace_type, func, args, kwargs
+                )
                 return client.get(uri)
+
             return wrapped
+
         return wrapped
 
-dynamic = Fetch('dynamic').fetch
-profile = Fetch('profile').fetch
-static = Fetch('static').fetch
+
+dynamic = Fetch("dynamic").fetch
+profile = Fetch("profile").fetch
+static = Fetch("static").fetch

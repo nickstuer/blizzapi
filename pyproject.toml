@@ -1,0 +1,21 @@
+[project]
+name = "blizzapi"
+version = "0.0.1.dev1"
+authors = [
+  { name="Nick Stuer", email="nickstuer@duck.com" },
+]
+description = "Python package to connect to the blizzard API."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/nickstuer/blizzapi"
+Issues = "https://github.com/nickstuer/blizzapi/issues"
+
+[tool.isort]
+profile = "black"

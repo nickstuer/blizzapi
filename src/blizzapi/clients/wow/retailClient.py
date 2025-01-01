@@ -1,10 +1,11 @@
 from blizzapi.core.fetch import dynamic, profile, static
 from blizzapi.core.baseClient import BaseClient
 
+
 class RetailClient(BaseClient):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.namespace_template = '{namespace}-{region}'
+        self.namespace_template = "{namespace}-{region}"
 
     ### Achievements API ###
     @static("/data/wow/achievement/index")
@@ -12,11 +13,11 @@ class RetailClient(BaseClient):
         pass
 
     @static("/data/wow/achievement/{achievementId}")
-    def achievement(self, achievementId:int):
+    def achievement(self, achievementId: int):
         pass
 
     @static("/data/wow/media/achievement/{achievementId}")
-    def achievement_media(self, achievementId:int):
+    def achievement_media(self, achievementId: int):
         pass
 
     @static("/data/wow/achievement-category/index")
@@ -24,7 +25,7 @@ class RetailClient(BaseClient):
         pass
 
     @static("/data/wow/achievement-category/{achievementCategoryId}")
-    def achievement_category(self, achievementCategoryId:int):
+    def achievement_category(self, achievementCategoryId: int):
         pass
 
     ### Titles API ###
@@ -33,16 +34,16 @@ class RetailClient(BaseClient):
         pass
 
     @static("/data/wow/title/{titleId}")
-    def title(self, titleId:int):
+    def title(self, titleId: int):
         pass
-    
+
     ### Toys API ###
     @static("/data/wow/toy/index")
     def toy_index(self):
         pass
 
     @static("/data/wow/toy/{toyId}")
-    def toy(self, toyId:int):
+    def toy(self, toyId: int):
         pass
 
     ### WoW Token API ###
@@ -50,6 +51,6 @@ class RetailClient(BaseClient):
     def wow_token_index(self):
         pass
 
-    #@profile("/profile/wow/character/{realmSlug}/{characterName}")
-    #def character_profile(self, realmSlug:str, characterName:str):
+    # @profile("/profile/wow/character/{realmSlug}/{characterName}")
+    # def character_profile(self, realmSlug:str, characterName:str):
     #    pass
