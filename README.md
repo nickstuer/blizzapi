@@ -35,8 +35,8 @@ Coming Soon
 | API                                   | Status                              |
 | :----------------------------------:  | :--------------------------------:  |
 | World Of Warcraft (Retail)            | Partial Support                     |
-| World Of Warcraft (Classic)           | Partial Support                     |
-| World of Warcraft (Classic Era)       | Partial Support                     |
+| World Of Warcraft (Classic)           | Supported (Game Data/Profile APIs)  |
+| World of Warcraft (Classic Era)       | Supported (Game Data/Profile APIs)  |
 | Hearthstone                           | Unplanned                           |
 | StarCraft 2                           | Unplanned                           |
 | Diablo 3                              | Unplanned                           |
