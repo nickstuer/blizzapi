@@ -1,6 +1,7 @@
 [project]
 name = "blizzapi"
-version = "0.0.1.dev1"
+#version = "0.0.1.dev1"
+dynamic = ["version"]
 authors = [
   { name="Nick Stuer", email="nickstuer@duck.com" },
 ]
@@ -19,3 +20,7 @@ Issues = "https://github.com/nickstuer/blizzapi/issues"
 
 [tool.isort]
 profile = "black"
+
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
