@@ -24,15 +24,14 @@ if not clientid or not clientsecret:
 
 client = ClassicEraClient(client_id=clientid, client_secret=clientsecret)
 
-# pprint(client.character_profile('eredar', 'toilet'))
-# pprint(client.character_profile('doomhowl', 'realrat'))
-# pprint(client.wow_token_index())
-# pprint(client.achievements_index())
+#result = client.wow_token_index()
+#result = client.achievements_index()
 
+result = client.character_profile('doomhowl', 'thetusk')
+pprint(result)
 
-#result = client.connected_realm_search(fields={"status.type": "DOWN"})
+#result = client.guild_roster('doomhowl', 'onlyfangs') # Guild API is currently broken on Blizzard's end
+#pprint(result)
 
-result = client.guild_roster('doomhowl', 'onlyfangs')
-
-
+result = client.connected_realm_search(fields={"status.type": "DOWN"})
 pprint(result)
