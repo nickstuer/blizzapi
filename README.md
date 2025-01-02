@@ -1,9 +1,11 @@
 # Python BlizzAPI
 
-[![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
+![PyPI](https://img.shields.io/pypi/v/blizzapi?label=blizzapi)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)
 <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/nickstuer/blizzapi">
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
 
 This Python package is a user-friendly interface for the Blizzard API. It simplifies the process of retrieving data from Blizzard's API, allowing developers and enthusiasts to seamlessly access and interact with game-related information.
 
@@ -118,6 +120,9 @@ Please use the [issue tracker](https://github.com/nickstuer/blizzapi/issues) to 
 
 #### Contributors
 
+<a href = "https://github.com/nickstuer/blizzapi/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=nickstuer/blizzapi"/>
+</a>
 
 ## 📃 License
 
