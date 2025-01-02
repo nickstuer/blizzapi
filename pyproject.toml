@@ -1,7 +1,6 @@
 [project]
 name = "blizzapi"
-#version = "0.0.1.dev1"
-dynamic = ["version"]
+version = "0.0.1.dev"
 authors = [
   { name="Nick Stuer", email="nickstuer@duck.com" },
 ]
@@ -12,6 +11,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
 ]
 
 [project.urls]
@@ -24,7 +24,3 @@ profile = "black"
 [build-system]
 requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
-
-[tool.pdm.version]
-source = "file"
-path = "src/__init__.py"
