@@ -24,3 +24,7 @@ profile = "black"
 [build-system]
 requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
+
+[tool.pdm.version]
+source = "file"
+path = "src/__init__.py"
