@@ -54,7 +54,7 @@ pip install blizzapi
 ### Blizzard API Client ID/Secret
 You must request API access from blizzard in order to use this module.
 
-(Request API Access)[https://develop.battle.net/access/]
+[Request API Access](https://develop.battle.net/access/)
 
 ##  📌 Dependencies
 Python 3.10 or greater
