@@ -1,6 +1,8 @@
 # Python BlizzAPI
 
 [![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
+<img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/nickstuer/blizzapi">
+
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 This Python package is a user-friendly interface for the Blizzard API. It simplifies the process of retrieving data from Blizzard's API, allowing developers and enthusiasts to seamlessly access and interact with game-related information.
