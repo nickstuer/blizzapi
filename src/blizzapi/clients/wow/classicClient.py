@@ -161,15 +161,21 @@ class ClassicClient(BaseClient):
     def pvp_regionional_season(self, pvpRegionId: int, pvpSeasonId: int):
         pass
 
-    @static("/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-leaderboard/index")
+    @static(
+        "/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-leaderboard/index"
+    )
     def pvp_regionional_leaderboard_index(self, pvpRegionId: int, pvpSeasonId: int):
         pass
 
-    @static("/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-leaderboard/{pvpBracket}")
+    @static(
+        "/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-leaderboard/{pvpBracket}"
+    )
     def pvp_leaderboard(self, pvpRegionId: int, pvpSeasonId: int, pvpBracket: str):
         pass
 
-    @static("/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-reward/index")
+    @static(
+        "/data/wow/pvp-region/{pvpRegionId}/pvp-season/{pvpSeasonId}/pvp-reward/index"
+    )
     def pvp_rewards_index(self, pvpRegionId: int, pvpSeasonId: int):
         pass
 
@@ -195,7 +201,7 @@ class ClassicClient(BaseClient):
     def region(self, regionId: int):
         pass
 
-    @static("/data/wow/token/index") # CN only
+    @static("/data/wow/token/index")  # CN only
     def wow_token_index(self):
         pass
 
@@ -241,18 +247,13 @@ class ClassicClient(BaseClient):
     def character_media(self, realmSlug: str, characterName: str):
         pass
 
-    ### Character Profile API ###
-    @profile("/profile/wow/character/{realmSlug}/{characterName}")
-    def character_profile(self, realmSlug: str, characterName: str):
-        pass
-
-    @profile("/profile/wow/character/{realmSlug}/{characterName}/status")
-    def character_profile_status(self, realmSlug: str, characterName: str):
-        pass
-
     ### Character PvP API ###
-    @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-bracket/{pvpBracket}")
-    def character_pvp_bracket_statistics(self, realmSlug: str, characterName: str, pvpBracket: str):
+    @profile(
+        "/profile/wow/character/{realmSlug}/{characterName}/pvp-bracket/{pvpBracket}"
+    )
+    def character_pvp_bracket_statistics(
+        self, realmSlug: str, characterName: str, pvpBracket: str
+    ):
         pass
 
     @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-summary")
@@ -274,7 +275,9 @@ class ClassicClient(BaseClient):
     def character_achievements_summary(self, realmSlug: str, characterName: str):
         pass
 
-    @profile("/profile/wow/character/{realmSlug}/{characterName}/achievements/statistics")
+    @profile(
+        "/profile/wow/character/{realmSlug}/{characterName}/achievements/statistics"
+    )
     def character_achievements_statistics(self, realmSlug: str, characterName: str):
         pass
 

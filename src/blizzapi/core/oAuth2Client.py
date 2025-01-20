@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-from pprint import pprint
 
 import requests
 from oauthlib.oauth2 import BackendApplicationClient
