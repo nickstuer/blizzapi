@@ -1,12 +1,12 @@
 [project]
 name = "blizzapi"
-version = "0.0.1.dev1"
+version = "0.0.1.dev2"
 authors = [
   { name="Nick Stuer", email="nickstuer@duck.com" },
 ]
 description = "Python package to connect to the blizzard API."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -15,8 +15,11 @@ classifiers = [
 ]
 dependencies = [
   "keyring>=25.6.0",
-  "requests-oauthlib>=2.0.0"
+  "requests-oauthlib>=2.0.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
 
 [project.urls]
 Homepage = "https://github.com/nickstuer/blizzapi"
@@ -28,3 +31,8 @@ profile = "black"
 [build-system]
 requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+]

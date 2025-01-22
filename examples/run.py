@@ -31,8 +31,8 @@ result = client.character_profile("doomhowl", "thetusk")
 pprint(result)
 
 # Guild API is currently broken on Blizzard's end
-result = client.guild_roster("doomhowl", "onlyfangs")
-pprint(result)
+#result = client.guild_roster("doomhowl", "onlyfangs")
+#pprint(result)
 
 # result = client.connected_realm_search(fields={"status.type": "DOWN"})
 # pprint(result)

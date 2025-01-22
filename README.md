@@ -27,7 +27,7 @@ Access a wide range of game data, including player profiles, achievements, chara
 Authenticate using Blizzard's OAuth2 system to ensure reliable access to private and public data.
 
 ### Ease of Use
-With clean and intuitive methods, developers can fetch and manipulate data without diving deep into Blizzard's API documentation.
+With clean and intuitive methods, developers can fetch data without deep diving into Blizzard's API documentation.
 
 ### Data Format
 Conveniently structured JSON responses make it easy to integrate with applications.
@@ -54,6 +54,10 @@ Coming Soon
 # PyPI
 pip install blizzapi
 ```
+or
+```
+uv add blizzapi
+```
 
 ### Blizzard API Client ID/Secret
 You must request API access from blizzard in order to use this module.
@@ -71,8 +75,7 @@ from blizzapi import ClassicEraClient
 client = ClassicEraClient(client_id=XXX, client_secret=YYY)
 
 result = client.connected_realm_search(fields={"status.type": "UP"})
-result = client.wow_token_index()
-result = client.character_profile('doomhowl', 'thetusk')
+result2 = client.character_profile('doomhowl', 'thetusk')
 ```
 
 ### WoW Retail
@@ -86,26 +89,32 @@ result = client.wow_token_index()
 ## 💻 Development
 
 #### Virtual Environment Setup
-Helpful notes on how to set up a virtual enviroment for developing python applications using VS Code on Windows.
+Helpful notes on how to set up a virtual enviroment for developing python applications using VS Code.
 
 <details><summary><b>Show Instructions</b></summary>
 
-1. Open "Folder" in VS Code
+1. Ensure python and uv are installed on PC. [uv Instructions](https://github.com/astral-sh/uv?tab=readme-ov-file#installation)
 
-2. Create Virtual Environment
-    1. Press CTRL + SHIFT + P and Select 'Python: Create Virtual Environment'
-    2. Follow the prompts
+2. Open "Folder" in VS Code
 
-3. Change Default Terminal in VS Code
-    1. Press CTRL + SHIFT + P and Select 'Terminal: Select Default Profile'
-    2. Choose 'Command Prompt'
+3. Change the Default Terminal in VS Code
+    1. Press CTRL + SHIFT + P (on Windows) or CMD + SHIFT + P (on macOS)
+    2. Select 'Terminal: Select Default Profile'
+    3. Choose 'Command Prompt' on Windows or 'bash' on macOS
 
-4. Test the Virtual Environment
-    1. Press CTRL + SHIFT + ~ to open a terminal.
-    2. Ensure the prompt begins with '(.venv)'
+4. Create Virtual Environment
+    1. Press CTRL + SHIFT + ` to open a Terminal
+    2. Enter 'uv venv'
+    3. Enter 'source .venv/bin/activate'
+    4. Verify the prompt begins with '(.venv)'
 
-5. Install the pip dependenies
-    1. Type: pip install -r requirements.txt
+5. Select Python Interpreter
+    1. Press CTRL + SHIFT + P (on Windows) or CMD + SHIFT + P (on macOS)
+    2. Select 'Python: Select Interpreter'
+    3. Choose the .venv python binary
+
+6. Install the dependenies
+    1. Enter 'uv sync'
         
 </details>
 
