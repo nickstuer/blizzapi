@@ -11,12 +11,12 @@ This Python package is a user-friendly interface for the Blizzard API. It simpli
 
 ## Table of Contents
 
-- [Features](#📖Features)
-- [Install](#🛠install)
-- [Usage](#usage)
-- [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
+- [Features](#📖 Features)
+- [Install](#🛠 Install)
+- [Usage](#🎮 Usage)
+- [Development](#💻 Development)
+- [Contributing](#🏆 Contributing)
+- [License](#📃 License)
 
 ## 📖 Features
 
@@ -31,9 +31,6 @@ With clean and intuitive methods, developers can fetch data without deep diving 
 
 ### Data Format
 Conveniently structured JSON responses make it easy to integrate with applications.
-
-### Rate Limit Awareness
-Coming Soon
 
 ### Supported APIs
 | API                                   | Status                              |
@@ -75,7 +72,7 @@ from blizzapi import ClassicEraClient
 client = ClassicEraClient(client_id=XXX, client_secret=YYY)
 
 result = client.connected_realm_search(fields={"status.type": "UP"})
-result2 = client.character_profile('doomhowl', 'thetusk')
+result = client.character_profile(realmSlug="doomhowl", characterName="thetusk")
 ```
 
 ### WoW Retail
