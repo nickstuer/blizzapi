@@ -11,12 +11,12 @@ This Python package is a user-friendly interface for the Blizzard API. It simpli
 
 ## Table of Contents
 
-- [Features](#📖 Features)
-- [Install](#🛠 Install)
-- [Usage](#🎮 Usage)
-- [Development](#💻 Development)
-- [Contributing](#🏆 Contributing)
-- [License](#📃 License)
+- [Features](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-features)
+- [Install](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-install)
+- [Usage](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-usage)
+- [Development](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-development)
+- [Contributing](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-contributing)
+- [License](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-license)
 
 ## 📖 Features
 
