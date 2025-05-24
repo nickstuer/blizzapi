@@ -42,4 +42,5 @@ class BaseClient(OAuth2Client):
             for k, v in all_args["fields"].items():
                 uri = append_param(uri, f"{k}={v}")
 
+        print(f"URI: {uri}")
         return uri

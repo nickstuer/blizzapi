@@ -1,6 +1,6 @@
 [project]
 name = "blizzapi"
-version = "0.0.1.dev2"
+version = "0.0.1.dev3"
 authors = [
   { name="Nick Stuer", email="nickstuer@duck.com" },
 ]

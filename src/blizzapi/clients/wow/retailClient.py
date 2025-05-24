@@ -54,3 +54,24 @@ class RetailClient(BaseClient):
     # @profile("/profile/wow/character/{realmSlug}/{characterName}")
     # def character_profile(self, realmSlug:str, characterName:str):
     #    pass
+
+    #########################################
+    # Profile API
+    #########################################
+
+    ### Account Profile API ###
+    @profile("/profile/user/wow")
+    def account_profile(self):
+        pass
+
+    @profile("/profile/user/wow/protected-character/{realmId}-{characterId}")
+    def protected_character_profile_summary(self, realmId: int, characterId: int):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/achievements")
+    def character_achievements_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}")
+    def character_profile(self, realmSlug: str, characterName: str):
+        pass
