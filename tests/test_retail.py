@@ -48,5 +48,33 @@ class TestRetail:
 
         assert result['id'] == 20597
         assert result['assets'][0]['file_data_id'] == 571554
-        assert result['assets'][0]['value'] == "https://render.worldofwarcraft.com/us/icons/56/ability_paladin_blindinglight2.jpg"   
+        assert result['assets'][0]['value'] == "https://render.worldofwarcraft.com/us/icons/56/ability_paladin_blindinglight2.jpg"  
+
+    def test_character_mythic_keystone_profile_index(self):
+
+        result = self.client.character_mythic_keystone_profile_index("eredar", "toilet")
+
+        seasons = result['seasons']
+        hasOne = False
+        hasTwo = True
+
+        for season in seasons:
+            if season['id'] == 1:
+                hasOne = True
+
+            if season['id'] == 2:
+                hasTwo = True
+
+
+        assert hasOne == True
+        assert hasTwo == False
+        #assert False
+
+    def test_character_mythic_keystone_season_details(self):
+        result = self.client.character_mythic_keystone_season_details("eredar", "toilet", 14)   # 13 is TWW Season 1
+        #pprint(result)
+
+        assert result['season']['id'] == 14
+
+
 

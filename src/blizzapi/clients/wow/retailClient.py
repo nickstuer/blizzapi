@@ -75,3 +75,12 @@ class RetailClient(BaseClient):
     @profile("/profile/wow/character/{realmSlug}/{characterName}")
     def character_profile(self, realmSlug: str, characterName: str):
         pass
+
+    ### Character Mythic Keystone Profile API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/mythic-keystone-profile")
+    def character_mythic_keystone_profile_index(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/mythic-keystone-profile/season/{seasonId}")
+    def character_mythic_keystone_season_details(self, realmSlug: str, characterName: str, seasonId: int):
+        pass
