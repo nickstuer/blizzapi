@@ -27,7 +27,7 @@ def get_clean_args(variables: dict) -> dict:
 def parse_uri(command_uri: str, variables: dict) -> str:
     uri = command_uri
     for k, v in variables.items():
-        uri = uri.replace("{" + k + "}", v)
+        uri = uri.replace("{" + str(k) + "}", str(v))
     return uri
 
 

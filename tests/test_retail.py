@@ -40,3 +40,13 @@ class TestRetail:
 
         assert visit1 == True
         assert visit2 == True
+
+    def test_achievement_media(self):
+        result = self.client.achievement_media(20597)
+       
+        pprint(result)
+
+        assert result['id'] == 20597
+        assert result['assets'][0]['file_data_id'] == 571554
+        assert result['assets'][0]['value'] == "https://render.worldofwarcraft.com/us/icons/56/ability_paladin_blindinglight2.jpg"   
+
