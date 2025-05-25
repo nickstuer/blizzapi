@@ -55,8 +55,9 @@ class TestRetail:
         result = self.client.character_mythic_keystone_profile_index("eredar", "toilet")
 
         seasons = result['seasons']
+
         hasOne = False
-        hasTwo = True
+        hasTwo = False
 
         for season in seasons:
             if season['id'] == 1:
