@@ -469,9 +469,140 @@ class RetailClient(BaseClient):
     def pvp_tier_media(self, pvpTierId: int):
         pass
 
+    # Quest API ###
+    @static("/data/wow/quest/index")
+    def quest_index(self):
+        pass
 
+    @static("/data/wow/quest/{questId}")
+    def quest(self, questId: int):
+        pass
 
-    ## HERE
+    @static("/data/wow/quest/category/index")
+    def quest_category_index(self):
+        pass
+
+    @static("/data/wow/quest/category/{questCategoryId}")
+    def quest_category(self, questCategoryId: int):
+        pass
+
+    @static("/data/wow/quest/area/index")
+    def quest_area_index(self):
+        pass
+
+    @static("/data/wow/quest/area/{questAreaId}")
+    def quest_area(self, questAreaId: int):
+        pass
+
+    @static("/data/wow/quest/type/index")
+    def quest_types_index(self):
+        pass
+
+    @static("/data/wow/quest/type/{questTypeId}")
+    def quest_type(self, questTypeId: int):
+        pass
+
+    ### Realm API ###
+    @dynamic("/data/wow/realm/index")
+    def realms_index(self):
+        pass
+
+    @dynamic("/data/wow/realm/{realmSlug}")
+    def realm(self, realmSlug: str):
+        pass
+
+    @dynamic("/data/wow/search/realm")
+    def realm_search(self, *args, **kwargs):
+        pass
+
+    ### Recipe API ###
+    @dynamic("/data/wow/region/index")
+    def regions_index(self):
+        pass
+
+    @dynamic("/data/wow/region/{regionId}")
+    def region(self, regionId: int):
+        pass
+
+    ### Reputation API ###
+    @static("/data/wow/reputation-faction/index")
+    def reputation_factions_index(self):
+        pass
+
+    @static("/data/wow/reputation-faction/{reputationFactionId}")
+    def reputation_faction(self, reputationFactionId: int):
+        pass
+
+    @static("/data/wow/reputation-tiers/index")
+    def reputation_tiers_index(self):
+        pass
+
+    @static("/data/wow/reputation-tiers/{reputationTiersId}")
+    def reputation_tiers(self, reputationTiersId: int):
+        pass
+
+    ### Spell API ###
+    @static("/data/wow/spell/{spellId}")
+    def spell(self, spellId: int):
+        pass
+
+    @static("/data/wow/media/spell/{spellId}")
+    def spell_media(self, spellId: int):
+        pass
+
+    @static("/data/wow/search/spell")
+    def spell_search(self, *args, **kwargs):
+        pass
+
+    ### Talent API ###
+    @static("/data/wow/talent-tree/index")
+    def talent_tree_index(self):
+        pass
+
+    @static("/data/wow/talent-tree/{talentTreeId}/playable-specialization/{specId}")
+    def talent_tree(self, talentTreeId: int, specId: int):
+        pass
+
+    @static("/data/wow/talent-tree/{talentTreeId}")
+    def talent_tree_nodes(self, talentTreeId: int):
+        pass
+
+    @static("/data/wow/talent/index")
+    def talents_index(self):
+        pass
+
+    @static("/data/wow/talent/{talentId}")
+    def talent(self, talentId: int):
+        pass
+
+    @static("/data/wow/pvp-talent/index")
+    def pvp_talents_index(self):
+        pass
+
+    @static("/data/wow/pvp-talent/{pvpTalentId")
+    def pvp_talent(self, pvpTalentId: int):
+        pass
+
+    ### Tech Talent API ###
+    @static("/data/wow/tech-talent-tree/index")
+    def tech_talent_tree_index(self):
+        pass
+
+    @static("/data/wow/tech-talent-tree/{techTalentTreeId}")
+    def tech_talent_tree(self, techTalentTreeId: int):
+        pass
+
+    @static("/data/wow/tech-talent/index")
+    def tech_talents_index(self):
+        pass
+
+    @static("/data/wow/tech-talent/{techTalentId}")
+    def tech_talent(self, techTalentId: int):
+        pass
+
+    @static("/data/wow/media/tech-talent/{techTalentId}")
+    def tech_talent_media(self, techTalentId: int):
+        pass
 
     ### Titles API ###
     @static("/data/wow/title/index")
@@ -496,29 +627,108 @@ class RetailClient(BaseClient):
     def wow_token_index(self):
         pass
 
-    # @profile("/profile/wow/character/{realmSlug}/{characterName}")
-    # def character_profile(self, realmSlug:str, characterName:str):
-    #    pass
-
     #########################################
     # Profile API
     #########################################
 
     ### Account Profile API ###
     @profile("/profile/user/wow")
-    def account_profile(self):
+    def account_profile_summary(self):
         pass
 
     @profile("/profile/user/wow/protected-character/{realmId}-{characterId}")
     def protected_character_profile_summary(self, realmId: int, characterId: int):
         pass
 
+    @profile("/profile/user/wow/collections")
+    def account_collections_index(self):
+        pass
+
+    @profile("/profile/user/wow/collections/heirlooms")
+    def account_heirlooms_collection_summary(self):
+        pass
+
+    @profile("/profile/user/wow/collections/mounts")
+    def account_mounts_collection_summary(self):
+        pass
+
+    @profile("/profile/user/wow/collections/pets")
+    def account_pets_collection_summary(self):
+        pass
+
+    @profile("/profile/user/wow/collections/toys")
+    def account_toys_collection_summary(self):
+        pass
+
+    @profile("/profile/user/wow/collections/transmogs")
+    def account_transmogs_collection_summary(self):
+        pass
+
+    ### Character Achievements API ###
     @profile("/profile/wow/character/{realmSlug}/{characterName}/achievements")
     def character_achievements_summary(self, realmSlug: str, characterName: str):
         pass
 
-    @profile("/profile/wow/character/{realmSlug}/{characterName}")
-    def character_profile(self, realmSlug: str, characterName: str):
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/achievements/statistics")
+    def character_achievements_statistics(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Apperance API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/appearance")
+    def character_appearance_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Collections API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections")
+    def character_collections_index(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections/heirlooms")
+    def character_heirlooms_collection_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections/mounts")
+    def character_mounts_collection_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections/pets")
+    def character_pets_collection_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections/toys")
+    def character_toys_collection_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/collections/transmogs")
+    def character_transmogs_collection_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Encounters API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/encounters")
+    def character_encounters_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/encounters/dungeons")
+    def character_dungeons(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/encounters/raids")
+    def character_raids(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Equipment API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/equipment")
+    def character_equipment_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Hunter Pets API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/hunter-pets")
+    def character_hunter_pets(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Media API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/character-media")
+    def character_media(self, realmSlug: str, characterName: str):
         pass
 
     ### Character Mythic Keystone Profile API ###
@@ -530,7 +740,81 @@ class RetailClient(BaseClient):
     def character_mythic_keystone_season_details(self, realmSlug: str, characterName: str, seasonId: int):
         pass
 
-    ### Character Media API ###
-    @profile("/profile/wow/character/{realmSlug}/{characterName}/character-media")
-    def character_media(self, realmSlug: str, characterName: str):
+    ### Character Profession API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/professions")
+    def character_professions_summary(self, realmSlug: str, characterName: str):
         pass
+
+    ### Character Profile API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}")
+    def character_profile_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/status")
+    def character_profile_status(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character PvP API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-bracket/{pvpBracket}")
+    def character_pvp_bracket_statistics(
+        self, realmSlug: str, characterName: str, pvpBracket: str
+    ):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-summary")
+    def character_pvp_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Quests API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/quests")
+    def character_quests(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/quests/completed")
+    def character_completed_quests(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Reputations API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/reputations")
+    def character_reputations_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Soulbinds API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/soulbinds")
+    def character_soulbinds(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Specialization API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/specializations")
+    def character_specializations_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/statistics")
+    def character_statistics_summary(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Character Titles API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/titles")
+    def character_titles(self, realmSlug: str, characterName: str):
+        pass
+
+    ### Guild API ###
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}")
+    def guild(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/activity")
+    def guild_activity(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/achievements")
+    def guild_achievements(self, realmSlug: str, nameSlug: str):
+        pass
+
+    @profile("/data/wow/guild/{realmSlug}/{nameSlug}/roster")
+    def guild_roster(self, realmSlug: str, nameSlug: str):
+        pass
+
+    
+
+    

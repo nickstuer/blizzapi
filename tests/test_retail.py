@@ -11,8 +11,8 @@ class TestRetail:
     client = RetailClient(client_id=clientid, client_secret=clientsecret)
 
 
-    def test_character_profile(self):
-        result = self.client.character_profile("eredar", "toilet")
+    def test_character_profile_summary(self):
+        result = self.client.character_profile_summary("eredar", "toilet")
         assert result['name'] == "Toilet"
 
     def test_character_achievements_summary(self):

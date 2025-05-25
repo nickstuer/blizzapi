@@ -35,7 +35,7 @@ Conveniently structured JSON responses make it easy to integrate with applicatio
 ### Supported APIs
 | API                                   | Status                              |
 | :----------------------------------:  | :--------------------------------:  |
-| World Of Warcraft (Retail)            | Partial Support                     |
+| World Of Warcraft (Retail)            | Supported (Game Data/Profile APIs)  |
 | World Of Warcraft (Classic)           | Supported (Game Data/Profile APIs)  |
 | World of Warcraft (Classic Era)       | Supported (Game Data/Profile APIs)  |
 | Hearthstone                           | Unplanned                           |
