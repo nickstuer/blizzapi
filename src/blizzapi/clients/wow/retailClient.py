@@ -84,3 +84,8 @@ class RetailClient(BaseClient):
     @profile("/profile/wow/character/{realmSlug}/{characterName}/mythic-keystone-profile/season/{seasonId}")
     def character_mythic_keystone_season_details(self, realmSlug: str, characterName: str, seasonId: int):
         pass
+
+    ### Character Media API ###
+    @profile("/profile/wow/character/{realmSlug}/{characterName}/character-media")
+    def character_media(self, realmSlug: str, characterName: str):
+        pass
