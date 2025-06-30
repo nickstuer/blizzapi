@@ -4,10 +4,16 @@ from pprint import pprint
 import getpass
 import keyring
 
-# Add the 'src' folder to the folder path to import (since we are in /tests)
+######### PATH FIX #########
+# This is a workaround to import the 'blizzapi' module
+# when running the example script directly.
+#
+# Do NOT use this in your code
+# This is just for the example to work)
 testdir = os.path.dirname(__file__)
 srcdir = "../src"
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
+######### END OF PATH FIX #########
 
 from blizzapi import ClassicEraClient  # noqa: E402
 
@@ -30,9 +36,9 @@ client = ClassicEraClient(client_id=clientid, client_secret=clientsecret)
 result = client.character_profile("doomhowl", "thetusk")
 pprint(result)
 
-# Guild API is currently broken on Blizzard's end
-#result = client.guild_roster("doomhowl", "onlyfangs")
-#pprint(result)
 
-# result = client.connected_realm_search(fields={"status.type": "DOWN"})
-# pprint(result)
+result = client.guild_roster("doomhowl", "onlyfangs")
+pprint(result)
+
+result = client.connected_realm_search(fields={"status.type": "DOWN"})
+pprint(result)
