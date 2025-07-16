@@ -25,7 +25,6 @@ pythonpath = [
 testpaths = [
     "tests/",
 ]
-asyncio_mode = "auto"
 
 [project.urls]
 Homepage = "https://github.com/nickstuer/blizzapi"
