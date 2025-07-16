@@ -19,7 +19,13 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = [
+  "src/"
+]
+testpaths = [
+    "tests/",
+]
+asyncio_mode = "auto"
 
 [project.urls]
 Homepage = "https://github.com/nickstuer/blizzapi"
@@ -35,4 +41,21 @@ build-backend = "setuptools.build_meta"
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
+    "pytest-cov>=6.2.1",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: not covered",
+    "@overload",
+    "if TYPE_CHECKING:",
+    "def __del__",
+]
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+omit = [
+    ".tox/*",
+    "tests/*",
 ]
