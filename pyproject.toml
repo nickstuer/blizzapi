@@ -31,8 +31,37 @@ asyncio_mode = "auto"
 Homepage = "https://github.com/nickstuer/blizzapi"
 Issues = "https://github.com/nickstuer/blizzapi/issues"
 
-[tool.isort]
-profile = "black"
+[tool.ruff]
+line-length = 120
+show-fixes = true
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+]
+ignore = [
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "D107",
+  "G004",
+  "ANN204",
+  "INP001",
+  "D104",
+  "D213",
+  "D203",
+  "COM812",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["S101", "D103", "PLR2004", "ANN201", "ANN202", "ANN001", "D401", "D404"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
 
 [build-system]
 requires = ["setuptools>=64", "setuptools-scm>=8"]

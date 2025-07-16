@@ -1,8 +1,13 @@
 # Python BlizzAPI
 
-![PyPI](https://img.shields.io/pypi/v/blizzapi?label=blizzapi)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)
+[![PyPI](https://img.shields.io/pypi/v/blizzapi?label=blizzapi)](https://pypi.org/project/blizzapi/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)](https://pypistats.org/packages/blizzapi)
+![Python Versions](https://img.shields.io/badge/python-3.10+-blue?logo=python)
 <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/nickstuer/blizzapi">
+
+![Lines Of Code](https://tokei.rs/b1/github/nickstuer/blizzapi)
+[![Codecov](https://img.shields.io/codecov/c/github/nickstuer/blizzapi)](https://app.codecov.io/gh/nickstuer/blizzapi)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/nickstuer/blizzapi/run_tests.yml)](https://github.com/nickstuer/blizzapi/actions/workflows/run_tests.yml)
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![license](https://img.shields.io/github/license/nickstuer/blizzapi.svg)](LICENSE)
