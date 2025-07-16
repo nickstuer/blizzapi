@@ -1,21 +1,9 @@
-import os
-import sys
-from pprint import pprint
 import getpass
+from pprint import pprint
+
 import keyring
 
-######### PATH FIX #########
-# This is a workaround to import the 'blizzapi' module
-# when running the example script directly.
-#
-# Do NOT use this in your code
-# This is just for the example to work)
-testdir = os.path.dirname(__file__)
-srcdir = "../src"
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-######### END OF PATH FIX #########
-
-from blizzapi import ClassicEraClient  # noqa: E402
+from blizzapi import ClassicEraClient
 
 username = getpass.getuser()
 clientid = keyring.get_password("wow-clientid", username)
