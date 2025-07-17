@@ -1,6 +1,6 @@
 [project]
 name = "blizzapi"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Nick Stuer", email="nickstuer@duck.com" },
 ]
@@ -14,7 +14,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
 ]
 dependencies = [
-  "keyring>=25.6.0",
   "requests-oauthlib>=2.0.0",
 ]
 
@@ -69,6 +68,7 @@ build-backend = "setuptools.build_meta"
 
 [dependency-groups]
 dev = [
+    "keyring>=25.6.0",
     "pytest>=8.3.4",
     "pytest-cov>=6.2.1",
 ]
