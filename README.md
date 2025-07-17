@@ -1,8 +1,8 @@
 # Python BlizzAPI
 
 [![PyPI](https://img.shields.io/pypi/v/blizzapi?label=blizzapi)](https://pypi.org/project/blizzapi/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)](https://pypistats.org/packages/blizzapi)
 ![Python Versions](https://img.shields.io/badge/python-3.10+-blue?logo=python)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)](https://pypistats.org/packages/blizzapi)
 <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/nickstuer/blizzapi">
 
 ![Lines Of Code](https://tokei.rs/b1/github/nickstuer/blizzapi)
@@ -16,14 +16,14 @@ This Python package is a user-friendly interface for the Blizzard API. It simpli
 
 ## Table of Contents
 
-- [Features](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-features)
-- [Install](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-install)
-- [Usage](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-usage)
-- [Development](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-development)
-- [Contributing](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-contributing)
-- [License](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#-license)
+- [Features](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#features)
+- [Install](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#install)
+- [Usage](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#usage)
+- [Development](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#development)
+- [Contributing](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#contributing)
+- [License](https://github.com/nickstuer/blizzapi?tab=readme-ov-file#license)
 
-## 📖 Features
+## Features
 
 ### Comprehensive API Coverage
 Access a wide range of game data, including player profiles, achievements, character information and guild information as documented in the official [Blizzard API Documenation](https://develop.battle.net/documentation).
@@ -50,7 +50,7 @@ Conveniently structured JSON responses make it easy to integrate with applicatio
 | Overwatch 2                           | Unsupported (No Blizzard API)       |
 
 
-## 🛠 Install
+## Install
 
 ```
 # PyPI
@@ -66,10 +66,10 @@ You must request API access from blizzard in order to use this module.
 
 [Request API Access](https://develop.battle.net/access/)
 
-##  📌 Dependencies
+##  Dependencies
 Python 3.10 or greater
 
-## 🎮 Usage
+## Usage
 
 ### WoW Classic Era
 ```python
@@ -88,7 +88,7 @@ client = RetailClient(client_id=XXX, client_secret=YYY)
 result = client.wow_token_index()
 ```
 
-## 💻 Development
+## Development
 
 #### Virtual Environment Setup
 Helpful notes on how to set up a virtual enviroment for developing python applications using VS Code.
@@ -120,7 +120,7 @@ Helpful notes on how to set up a virtual enviroment for developing python applic
         
 </details>
 
-## 🏆 Contributing
+## Contributing
 
 PRs accepted.
 
@@ -135,6 +135,6 @@ Please use the [issue tracker](https://github.com/nickstuer/blizzapi/issues) to 
   <img src = "https://contrib.rocks/image?repo=nickstuer/blizzapi"/>
 </a>
 
-## 📃 License
+## License
 
 [MIT © Nick Stuer](LICENSE)
