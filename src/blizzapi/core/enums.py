@@ -11,7 +11,7 @@ class Region(Enum):
 
 class Language(Enum):
     English = "en_US"
-    English_UnitedStates = "en_US"
+    English_UnitedStates = "en_US"  # noqa: PIE796
     English_GreatBritian = "en_GB"
     Spanish_Mexico = "es_MX"
     Spanish_Spain = "es_ES"

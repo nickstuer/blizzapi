@@ -1,6 +1,6 @@
 from blizzapi.core.constants import API_BASE_URI, TOKEN_AUTH_URI
 from blizzapi.core.enums import Language, Region
-from blizzapi.core.oAuth2Client import OAuth2Client
+from blizzapi.core.oauth2_client import OAuth2Client
 from blizzapi.core.utils import (
     append_param,
     get_args_from_func,
@@ -23,9 +23,7 @@ class BaseClient(OAuth2Client):
         token_auth_uri = TOKEN_AUTH_URI[self.region]
         super().__init__(client_id, client_secret, token_auth_uri)
 
-    def build_uri(
-        self, command_uri: str, namespace_type: str, func, args, kwargs
-    ) -> str:
+    def build_uri(self, command_uri: str, namespace_type: str, func, args, kwargs) -> str:
         all_args = get_args_from_func(func, args, kwargs)
         args = get_clean_args(all_args)
         command_uri = parse_uri(command_uri, args)
@@ -42,5 +40,4 @@ class BaseClient(OAuth2Client):
             for k, v in all_args["fields"].items():
                 uri = append_param(uri, f"{k}={v}")
 
-        print(f"URI: {uri}")
         return uri

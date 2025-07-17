@@ -1,9 +1,9 @@
-from blizzapi.core.baseClient import BaseClient
+from blizzapi.core.base_client import BaseClient
 from blizzapi.core.fetch import dynamic, profile, static
 
 
 class RetailClient(BaseClient):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: tuple, **kwargs: dict):
         super().__init__(*args, **kwargs)
         self.namespace_template = "{namespace}-{region}"
 
@@ -159,7 +159,7 @@ class RetailClient(BaseClient):
     @static("/data/wow/search/item")
     def item_search(self, *args, **kwargs):
         pass
-    
+
     @static("/data/wow/media/item/{itemId}")
     def item_media(self, itemId: int):
         pass
@@ -756,9 +756,7 @@ class RetailClient(BaseClient):
 
     ### Character PvP API ###
     @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-bracket/{pvpBracket}")
-    def character_pvp_bracket_statistics(
-        self, realmSlug: str, characterName: str, pvpBracket: str
-    ):
+    def character_pvp_bracket_statistics(self, realmSlug: str, characterName: str, pvpBracket: str):
         pass
 
     @profile("/profile/wow/character/{realmSlug}/{characterName}/pvp-summary")
@@ -814,7 +812,3 @@ class RetailClient(BaseClient):
     @profile("/data/wow/guild/{realmSlug}/{nameSlug}/roster")
     def guild_roster(self, realmSlug: str, nameSlug: str):
         pass
-
-    
-
-    

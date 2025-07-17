@@ -21,27 +21,23 @@ class OAuth2Client:
         self.client_secret = client_secret
         self.token_uri = token_uri
         self.token = None
-        self.token_expiration_grace_period = token_expiration_grace_period  # Amount of minutes left on a token expirations to trigger requesting a new token
+        self.token_expiration_grace_period = token_expiration_grace_period  # in minutes left before expiration
 
         self.s = requests.Session()
-        retries = Retry(
-            total=3, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504, 404, 403]
-        )
+        retries = Retry(total=3, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504, 404, 403])
 
         self.s.mount("https://", HTTPAdapter(max_retries=retries))
 
-    def get(self, uri):
+    def get(self, uri: str) -> dict:
         self.refresh_token()
         response = self.s.get(uri, auth=BearerAuth(self.token["access_token"]))
         return response.json()
 
-    def refresh_token(self):
-        if self.token is None:
-            self.get_new_token()
-        elif self.token_expiring_soon():
+    def refresh_token(self) -> None:
+        if self.token is None or self.token_expiring_soon():
             self.get_new_token()
 
-    def get_new_token(self):
+    def get_new_token(self) -> None:
         client = BackendApplicationClient(client_id=self.client_id)
         oauth = OAuth2Session(client=client)
 
@@ -50,7 +46,7 @@ class OAuth2Client:
             auth=HTTPBasicAuth(self.client_id, self.client_secret),
         )
 
-    def token_expiring_soon(self):
+    def token_expiring_soon(self) -> bool:
         expire_time = datetime.fromtimestamp(self.token["expires_at"], timezone.utc)
         now_time = datetime.now(timezone.utc)
 

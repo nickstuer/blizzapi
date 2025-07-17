@@ -3,7 +3,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from blizzapi.core.oAuth2Client import OAuth2Client
+from blizzapi.core.oauth2_client import OAuth2Client
 
 
 @pytest.fixture
@@ -16,7 +16,7 @@ def oauth2_client():
     )
 
 
-@patch("blizzapi.core.oAuth2Client.BearerAuth")
+@patch("blizzapi.core.oauth2_client.BearerAuth")
 @patch.object(OAuth2Client, "refresh_token")
 def test_get_calls_refresh_and_returns_json(mock_refresh, mock_bearer, oauth2_client):
     mock_response = MagicMock()
@@ -32,11 +32,9 @@ def test_get_calls_refresh_and_returns_json(mock_refresh, mock_bearer, oauth2_cl
     assert result == {"foo": "bar"}
 
 
-@patch("blizzapi.core.oAuth2Client.OAuth2Session")
-@patch("blizzapi.core.oAuth2Client.BackendApplicationClient")
-def test_get_new_token_sets_token(
-    mock_backend_client, mock_oauth2session, oauth2_client
-):
+@patch("blizzapi.core.oauth2_client.OAuth2Session")
+@patch("blizzapi.core.oauth2_client.BackendApplicationClient")
+def test_get_new_token_sets_token(mock_backend_client, mock_oauth2session, oauth2_client):
     mock_oauth = MagicMock()
     mock_oauth.fetch_token.return_value = {
         "access_token": "abc",
@@ -71,9 +69,7 @@ def test_refresh_token_none_triggers_get_new_token(mock_get_new_token, oauth2_cl
 
 @patch.object(OAuth2Client, "get_new_token")
 @patch.object(OAuth2Client, "token_expiring_soon", return_value=True)
-def test_refresh_token_expiring_triggers_get_new_token(
-    mock_expiring, mock_get_new_token, oauth2_client
-):
+def test_refresh_token_expiring_triggers_get_new_token(mock_expiring, mock_get_new_token, oauth2_client):
     oauth2_client.token = {"access_token": "abc", "expires_at": 1234567890}
     oauth2_client.refresh_token()
     mock_get_new_token.assert_called_once()
@@ -81,9 +77,7 @@ def test_refresh_token_expiring_triggers_get_new_token(
 
 @patch.object(OAuth2Client, "get_new_token")
 @patch.object(OAuth2Client, "token_expiring_soon", return_value=False)
-def test_refresh_token_not_expiring_does_not_trigger_get_new_token(
-    mock_expiring, mock_get_new_token, oauth2_client
-):
+def test_refresh_token_not_expiring_does_not_trigger_get_new_token(mock_expiring, mock_get_new_token, oauth2_client):
     oauth2_client.token = {"access_token": "abc", "expires_at": 1234567890}
     oauth2_client.refresh_token()
     mock_get_new_token.assert_not_called()

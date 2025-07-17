@@ -17,7 +17,6 @@ class DummyOAuth2Client(DummyClient):
     pass
 
 
-@patch("blizzapi.core.fetch.BaseClient", new=DummyClient)
 @patch("blizzapi.core.fetch.OAuth2Client", new=DummyOAuth2Client)
 def test_fetch_decorator_calls_build_uri_and_get():
     client = DummyOAuth2Client()
@@ -38,7 +37,6 @@ def test_fetch_decorator_calls_build_uri_and_get():
         assert result == {"uri": "https://api.test/dynamic/test/endpoint"}
 
 
-@patch("blizzapi.core.fetch.BaseClient", new=DummyClient)
 @patch("blizzapi.core.fetch.OAuth2Client", new=DummyOAuth2Client)
 def test_dynamic_profile_static_shortcuts():
     client = DummyOAuth2Client()
@@ -70,5 +68,5 @@ def test_fetch_decorator_asserts_oauth2client():
     class NotOAuth2Client:
         pass
 
-    with pytest.raises(AssertionError):
+    with pytest.raises(TypeError):
         test_func(NotOAuth2Client())

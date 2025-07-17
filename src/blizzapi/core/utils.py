@@ -1,8 +1,10 @@
+from collections.abc import Callable
+
 import requests
 
 
 class BearerAuth(requests.auth.AuthBase):
-    def __init__(self, token):
+    def __init__(self, token: str):
         self.token = token
 
     def __call__(self, r: requests.Request):
@@ -10,18 +12,13 @@ class BearerAuth(requests.auth.AuthBase):
         return r
 
 
-def get_args_from_func(fn, args, kwargs) -> dict:
+def get_args_from_func(fn: Callable, args: tuple, kwargs: dict) -> dict:
     args_names = fn.__code__.co_varnames[: fn.__code__.co_argcount]
-    variables = {**dict(zip(args_names, args)), **kwargs}
-    return variables
+    return {**dict(zip(args_names, args, strict=False)), **kwargs}
 
 
 def get_clean_args(variables: dict) -> dict:
-    clean = {}
-    for k, v in variables.items():
-        if isinstance(v, (str, int, float, bool)):
-            clean[k] = v
-    return clean
+    return {k: v for k, v in variables.items() if isinstance(v, (str, int, float, bool))}
 
 
 def parse_uri(command_uri: str, variables: dict) -> str:
@@ -34,5 +31,4 @@ def parse_uri(command_uri: str, variables: dict) -> str:
 def append_param(uri: str, param: str) -> str:
     if "?" in uri:
         return uri + "&" + param
-    else:
-        return uri + "?" + param
+    return uri + "?" + param
