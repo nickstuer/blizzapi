@@ -24,7 +24,7 @@ class OAuth2Client:
         self.token_expiration_grace_period = token_expiration_grace_period  # in minutes left before expiration
 
         self.s = requests.Session()
-        retries = Retry(total=3, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504, 404, 403])
+        retries = Retry(total=3, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504, 403])
 
         self.s.mount("https://", HTTPAdapter(max_retries=retries))
 
