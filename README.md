@@ -5,7 +5,7 @@
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/blizzapi)](https://pypistats.org/packages/blizzapi)
 <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/nickstuer/blizzapi">
 
-![Lines Of Code](https://tokei.rs/b1/github/nickstuer/blizzapi)
+![Lines Of Code](https://img.shields.io/endpoint?url=https://ghloc.vercel.app/api/nickstuer/blizzapi/badge?filter=.py$,.scss$,.rs$&style=flat&logoColor=white&label=Lines%20of%20Code)
 [![Codecov](https://img.shields.io/codecov/c/github/nickstuer/blizzapi)](https://app.codecov.io/gh/nickstuer/blizzapi)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/nickstuer/blizzapi/run_tests.yml)](https://github.com/nickstuer/blizzapi/actions/workflows/run_tests.yml)
 
