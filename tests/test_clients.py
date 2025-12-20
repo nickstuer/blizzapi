@@ -39,6 +39,24 @@ def test_retail():
 
 
 @patch("blizzapi.clients.wow.retail_client.RetailClient.get", lambda _, x: mock_get(x))
+def test_retail_lowercase_realm_character_args():
+    client = RetailClient("client_id", "client_secret")
+    result = client.character_profile_summary("Doomhowl", "Thetusk")
+    assert (
+        result == "https://us.api.blizzard.com/profile/wow/character/doomhowl/thetusk?namespace=profile-us&locale=en_US"
+    )
+
+
+@patch("blizzapi.clients.wow.retail_client.RetailClient.get", lambda _, x: mock_get(x))
+def test_retail_lowercase_realm_character_kwargs():
+    client = RetailClient("client_id", "client_secret")
+    result = client.character_profile_summary(realmSlug="Doomhowl", characterName="Thetusk")
+    assert (
+        result == "https://us.api.blizzard.com/profile/wow/character/doomhowl/thetusk?namespace=profile-us&locale=en_US"
+    )
+
+
+@patch("blizzapi.clients.wow.retail_client.RetailClient.get", lambda _, x: mock_get(x))
 def test_retail_with_fields():
     client = RetailClient("client_id", "client_secret")
     result = client.character_profile_summary("doomhowl", "thetusk", fields={"achievements": "progression"})
