@@ -31,10 +31,12 @@ class Fetch:
                     if name in ("realmSlug", "characterName") and i < len(args) and isinstance(args[i], str):
                         args[i] = args[i].lower()
                         args[i] = args[i].replace("'", "")
+                        args[i] = args[i].replace(" ", "-") if name == "realmSlug" else args[i]
 
                 if "realmSlug" in kwargs:
                     kwargs["realmSlug"] = kwargs["realmSlug"].lower()
                     kwargs["realmSlug"] = kwargs["realmSlug"].replace("'", "")
+                    kwargs["realmSlug"] = kwargs["realmSlug"].replace(" ", "-")
                 if "characterName" in kwargs:
                     kwargs["characterName"] = kwargs["characterName"].lower()
 
