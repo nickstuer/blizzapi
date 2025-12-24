@@ -1,12 +1,15 @@
 import inspect
 from collections.abc import Callable
 from functools import wraps
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, ParamSpec, TypeVar
 
 from blizzapi.core.oauth2_client import OAuth2Client
 
 if TYPE_CHECKING:
     from blizzapi.core.base_client import BaseClient
+
+P = ParamSpec("P")
+R = TypeVar("R")
 
 
 class Fetch:
@@ -14,7 +17,7 @@ class Fetch:
         self.namespace_type = namespace_type
 
     def fetch(self, command_uri: str):  # noqa: ANN201
-        def wrapped(func: Callable):  # noqa: ANN202
+        def wrapped(func: Callable[P, R]) -> Callable[P, R]:
             sig = inspect.signature(func)
             param_names = list(sig.parameters.keys())
 
