@@ -1,10 +1,17 @@
 from blizzapi.core.base_client import BaseClient
+from blizzapi.core.enums import Language, Region
 from blizzapi.core.fetch import dynamic, profile, static
 
 
 class RetailClient(BaseClient):
-    def __init__(self, *args: tuple, **kwargs: dict):
-        super().__init__(*args, **kwargs)
+    def __init__(
+        self,
+        client_id: str,
+        client_secret: str,
+        region: Region = Region.US,
+        language: Language = Language.English,
+    ):
+        super().__init__(client_id, client_secret, region, language)
         self.namespace_template = "{namespace}-{region}"
 
     #########################################
